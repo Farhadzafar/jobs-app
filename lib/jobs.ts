@@ -1,5 +1,26 @@
 const BASE_URL = "http://localhost:3000/api";
 
+type FormData = {
+  title: string;
+  company: string;
+  description: string;
+  companyInfo: string;
+  logo: string;
+  type: string;
+  salary: string;
+  location: string;
+  remote: boolean;
+  tags: string;
+  companyEmail: string;
+  companyWebsite: string;
+  companyLinks: string;
+  team: string;
+  experience: string;
+  jobApplyDescription: string;
+  startDate: string;
+  closingDate: string;
+};
+
 // geting all jobs from api
 async function getJobs() {
   const response = await fetch(`${BASE_URL}/jobs`);
@@ -16,4 +37,24 @@ async function getJob(id: any) {
   return data;
 }
 
-export { getJobs, getJob };
+// This function sends a POST request to add a new job
+async function addingJob(jobData: any) {
+  try {
+    const response = await fetch(`${BASE_URL}/jobs`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(jobData),
+    });
+
+    const result = await response.json();
+    console.log("✅ Job added successfully:", result);
+    return result;
+  } catch (error) {
+    console.error("🔥 Error adding job:", error);
+    alert("An error occurred while adding the job.");
+  }
+}
+
+export { getJobs, getJob, addingJob };

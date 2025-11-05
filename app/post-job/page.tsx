@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/select";
 import { Briefcase, CheckCircle2, AlertCircle, Plus, X } from "lucide-react";
 import { toast } from "sonner";
+import { addingJob } from "@/lib/jobs";
 // import { jobService } from "@/lib/supabase/client";
 
 type FormData = {
@@ -165,16 +166,35 @@ export default function PostJobPage() {
         closingDate: closingDate,
       };
 
-      //   await jobService.createJob(jobData);
-      console.log("😎🏠🏠", jobData);
+      const result = await addingJob(jobData);
       setIsSubmitted(true);
-      toast.success("Job posted successfully!", {
+      toast.success(result.message, {
         description: "Your job posting is now live.",
+        duration: 4000,
+        position: "top-center",
+        style: {
+          border: "1px solid #f87171",
+          background: "#fee2e2",
+          color: "#b91c1c",
+          fontWeight: "bold",
+          borderRadius: "5px",
+          padding: "16px",
+        },
       });
     } catch (error) {
       console.error("Error posting job:", error);
       toast.error("Failed to post job", {
         description: "Please try again later.",
+        duration: 4000,
+        position: "top-center",
+        style: {
+          border: "1px solid #f87171",
+          background: "#fee2e2",
+          color: "#b91c1c",
+          fontWeight: "bold",
+          borderRadius: "5px",
+          padding: "16px",
+        },
       });
     } finally {
       setIsSubmitting(false);

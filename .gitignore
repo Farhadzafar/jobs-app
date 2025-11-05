@@ -45,4 +45,7 @@ next-env.d.ts
 # database files
 app/prisma/prisma/dev.db
 
+.db
+.db/generated
+
 
