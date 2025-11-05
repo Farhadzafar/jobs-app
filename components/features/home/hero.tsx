@@ -13,11 +13,21 @@ export default function Hero() {
   return (
     <div
       className="bg-cover bg-top bg-no-repeat pt-20 md:pt-24 mt-16"
+      // style={{
+      //   backgroundImage:
+      //     'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)), url("https://images.pexels.com/photos/2532088/pexels-photo-2532088.jpeg?auto=format&fit=crop&w=1920&q=80")',
+      //   minHeight: "500px",
+      // }}
       style={{
         backgroundImage:
-          'linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.98)), url("https://images.pexels.com/photos/8640331/pexels-photo-8640331.jpeg?auto=format&fit=crop&w=1920&q=80")',
+          'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.78)), url("https://images.pexels.com/photos/141447/pexels-photo-141447.jpeg?auto=format&fit=crop&w=1920&q=80")',
         minHeight: "500px",
       }}
+      // style={{
+      //   backgroundImage:
+      //     'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.88)), url("https://images.pexels.com/photos/8640331/pexels-photo-8640331.jpeg?auto=format&fit=crop&w=1920&q=80")',
+      //   minHeight: "500px",
+      // }}
       // style={{
       //   backgroundImage:
       //     'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("https://images.pexels.com/photos/14011035/pexels-photo-14011035.jpeg?auto=format&fit=crop&w=1920&q=80")',
